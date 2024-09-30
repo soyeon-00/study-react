@@ -24,23 +24,57 @@ const Form = () => {
       //   .catch(console.error)
       // })}>
 
-      // CRUD(Create), post 요청
-      await fetch("http://localhost:4000/user", {
-        method : 'POST',
-        headers : {
-          'Content-Type' : "application/json"
-        },
-        body : JSON.stringify({
-          id : 2,
-          email : data.email,
-          password : data.password
-        })
-      })
-        .then((response) => response.json())
-        .then(console.log)
-        .catch(console.error)
+      // // CRUD(Create), post 요청
+      // await fetch("http://localhost:4000/user", {
+      //   method : 'POST',
+      //   headers : {
+      //     'Content-Type' : "application/json"
+      //   },
+      //   body : JSON.stringify({
+      //     id : 2,
+      //     email : data.email,
+      //     password : data.password
+      //   })
+      // })
+      //   .then((response) => response.json())
+      //   .then(console.log)
+      //   .catch(console.error)
 
-      })}>
+      // DELETE
+      // 요청경로 http://localhost:4000/user/2
+      // if(window.confirm('정말 회원탈퇴 하시겠습니까?')){
+      //   fetch(`http://localhost:4000/user/2`, {
+      //     method : 'DELETE',
+      //     headers : {
+      //       'Content-Type' : "application/json"
+      //     },
+      //     body : JSON.stringify({
+      //       ...data
+      //     })
+      //   }).then((response) => {
+      //     if(!response.ok){ return console.log(`Error ${response}`)}
+      //     console.log("회원탈퇴가 완료되었습니다.")
+      //   })
+      // }
+
+      // UPDATE
+      // 요청경로 http://localhost:4000/user/1
+      if(window.confirm('업데이트 하시겠습니까?')){
+        fetch(`http://localhost:4000/user/1`, {
+          method : 'PUT',
+          headers : {
+            'Content-Type' : "application/json"
+          },
+          body : JSON.stringify({
+            ...data
+          })
+        }).then((response) => {
+          if(!response.ok){ return console.log(`Error ${response}`)}
+          console.log("업데이트가 완료되었습니다.")
+        })
+      }
+    })}>
+      
       <label>
         <div style={{display:'flex', flexDirection:'row'}}>
           <p>이메일</p>

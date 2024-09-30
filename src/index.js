@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 // 리덕스 코드 추가
 import { Provider } from 'react-redux';
 import { legacy_createStore as createStore } from 'redux';
-import{ devToolsEnhancer} from '@redux-devtools/extension';
+import{ devToolsEnhancer } from '@redux-devtools/extension';
 import rootReducer from './modules';
 
 
@@ -17,9 +17,9 @@ const store = createStore(rootReducer, devToolsEnhancer())
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  <Provider store={store}>
-    <App />
-  </Provider>
+    <Provider store={store}>
+        <App />
+    </Provider>
   </>
 );
 

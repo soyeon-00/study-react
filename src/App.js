@@ -3,16 +3,9 @@ import React from 'react';
 import GlobalStyle from './global/global';
 import { ThemeProvider } from 'styled-components';
 import theme from './global/theme';
-import Form from './docs/day05/form/Form';
-// import Counter from './docs/day05/zustand/Counter';
-// import FontContainer from './docs/day05/redux/font/FontContainer';
-// import CountContainer from './docs/day05/redux/count/CountContainer';
-// import AnimalsContainer from './docs/day04/context/expert/AnimalsContainer';
-// import ParentContainer from './docs/day04/context/normal/ParentContainer';
-// import ParentContainer from './docs/day04/context/basic/ParentContainer';
-// import HomeIcon from './pages/home/HomeIcon';
-// import PowButton from './pages/home/PowButton';
-// import CharContainer from './docs/day04/context/basic/CharContainer';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/router';
+
 
 
 
@@ -21,15 +14,7 @@ function App() {
     <>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {/* <HomeIcon /> */}
-      {/* <PowButton /> */}
-      {/* <CharContainer /> */}
-      {/* <ParentContainer /> */}
-      {/* <AnimalsContainer /> */}
-      {/* <CountContainer /> */}
-      {/* <FontContainer /> */}
-      {/* <Counter /> */}
-      <Form />
+      <RouterProvider router={router}/>
     </ThemeProvider>
   </>
   );
